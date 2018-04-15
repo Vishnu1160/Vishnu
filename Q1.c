@@ -50,6 +50,22 @@ int main()
  
         total+=wt[i];
     }
+ avg_wt=total/n;      //average waiting time
+    total=0;
  
+    printf("\nProcess\t    Burst Time    \tWaiting Time\tTurnaround Time");
+    for(i=0;i<n;i++)
+    {
+        tat[i]=bt[i]+wt[i];     //calculate turnaround time
+        total+=tat[i];
+        printf("\nP[%d]\t\t  %d\t\t    %d\t\t\t%d",p[i],bt[i],wt[i],tat[i]);
+    }
+ 
+    avg_tat=total/n;     //average turnaround time
+    printf("\n\nAverage Waiting Time=%d",avg_wt);
+    printf("\nAverage Turnaround Time=%d\n",avg_tat);
+ 
+    return 0;
+
 
  }
